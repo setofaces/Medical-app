@@ -1,0 +1,26 @@
+# Project exclude paths
+/common-module/build-tools/target/
+/common-module/common-services/target/
+/common-module/common-utils/target/
+/common-module/dependency-management-bom/target/
+/common-module/dto/target/
+/common-module/target/
+/device/core/target/
+/device/dependency-management-bom/target/
+/device/target/
+/medical-monitoring/core/target/
+/medical-monitoring/core-api/target/
+/medical-monitoring/dependency-management-bom/target/
+/medical-monitoring/dto/target/
+/medical-monitoring/target/
+/medical-monitoring/utils/target/
+/message-analyzer/core/target/
+/message-analyzer/dependency-management-bom/target/
+/message-analyzer/target/
+/person-service/core/target/
+/person-service/core-api/target/
+/person-service/dependency-management-bom/target/
+/person-service/dto/target/
+/person-service/migration/target/
+/person-service/target/
+/person-service/utils/target/
