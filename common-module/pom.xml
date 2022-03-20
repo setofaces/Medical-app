@@ -34,7 +34,7 @@
 
         <spring.boot.version>2.3.0.RELEASE</spring.boot.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
-        <model.mapper.version>2.3.7</model.mapper.version>
+        <liga.medical.model.mapper.version>2.3.7</liga.medical.model.mapper.version>
         <guava.version>29.0-jre</guava.version>
         <lombok.version>1.18.12</lombok.version>
         <springboot.test.version>2.1.2.RELEASE</springboot.test.version>
@@ -139,11 +139,11 @@
     </profiles>
 
     <distributionManagement>
-        <!--        <repository>-->
+        <!--        <liga.medical.repository>-->
         <!--            <id></id>-->
         <!--            <name></name>-->
         <!--            <url></url>-->
-        <!--        </repository>-->
+        <!--        </liga.medical.repository>-->
         <!--        <snapshotRepository>-->
         <!--            <id></id>-->
         <!--            <name></name>-->

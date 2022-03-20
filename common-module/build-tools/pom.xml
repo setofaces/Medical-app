@@ -14,11 +14,11 @@
     </properties>
 
     <distributionManagement>
-        <!--        <repository>-->
+        <!--        <liga.medical.repository>-->
         <!--            <id></id>-->
         <!--            <name></name>-->
         <!--            <url></url>-->
-        <!--        </repository>-->
+        <!--        </liga.medical.repository>-->
         <!--        <snapshotRepository>-->
         <!--            <id></id>-->
         <!--            <name></name>-->
