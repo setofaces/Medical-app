@@ -21,7 +21,7 @@ public class MedicalCardServiceImpl implements MedicalCardService {
 
     @Override
     public MedicalCardDto findById(Long id) {
-        return null;
+        return mapper.modelToDto(repository.findById(id));
     }
 
     @Override

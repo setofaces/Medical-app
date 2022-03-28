@@ -14,7 +14,7 @@ import java.util.List;
 @Mapper
 public interface MedicalCardRepository  {
     @Select("SELECT * FROM medical_card WHERE id=#{id}")
-    Illness findById(Long id);
+    MedicalCard findById(Long id);
 
     @Select("SELECT * FROM medical_card")
     List<MedicalCard> findAll();

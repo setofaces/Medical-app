@@ -30,6 +30,8 @@ first_name VARCHAR(255),
 birth_dt DATE,
 age SMALLINT,
 sex CHAR,
+email VARCHAR(255),
+password VARCHAR(255),
 contact_id BIGINT REFERENCES contact (id),
 medical_card_id BIGINT REFERENCES medical_card (id),
 parent_id BIGINT REFERENCES person_data (id)
@@ -42,4 +44,9 @@ type_id BIGINT,
 heaviness CHAR,
 appearance_dttm TIMESTAMP,
 recovery_dt DATE
+);
+
+CREATE TABLE role (
+id BIGINT PRIMARY KEY generated always as identity,
+name VARCHAR(255)
 );

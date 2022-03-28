@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="liga.medical.repository.RoleRepository">
+
+    <resultMap id="role" type="liga.medical.model.Role" autoMapping="true">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <select id="findById" resultMap="role">
+        SELECT * FROM role  WHERE id=#{id}
+    </select>
+
+
+    <select id="findByName" resultMap="role">
+        SELECT * FROM role  WHERE name=#{name}
+    </select>
+
+    <select id="findAll" resultMap="role">
+        SELECT * FROM role ;
+    </select>
+
+    <insert id="addAll" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO role (name) VALUES
+        <foreach collection="collection" item="item" separator=",">
+            (#{item.name})
+        </foreach>
+    </insert>
+
+    <insert id="add" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO role (name) VALUES
+            (#{r1.name})
+    </insert>
+
+</mapper>

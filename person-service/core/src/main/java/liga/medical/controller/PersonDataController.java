@@ -1,7 +1,7 @@
 package liga.medical.controller;
 
 import liga.medical.dto.PersonDataDto;
-import liga.medical.service.PersonalDataService;
+import liga.medical.service.PersonDataService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,9 +16,9 @@ import java.util.List;
 @RestController
 public class PersonDataController {
 
-    PersonalDataService service;
+    PersonDataService service;
 
-    public PersonDataController(PersonalDataService service) {
+    public PersonDataController(PersonDataService service) {
         this.service = service;
     }
 

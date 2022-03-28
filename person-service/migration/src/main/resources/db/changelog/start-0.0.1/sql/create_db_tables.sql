@@ -30,6 +30,8 @@ first_name VARCHAR(255),
 birth_dt DATE,
 age SMALLINT,
 sex CHAR,
+email VARCHAR(255),
+password VARCHAR(255),
 contact_id BIGINT REFERENCES contact (id),
 medical_card_id BIGINT REFERENCES medical_card (id),
 parent_id BIGINT REFERENCES person_data (id)
@@ -42,4 +44,18 @@ type_id BIGINT,
 heaviness CHAR,
 appearance_dttm TIMESTAMP,
 recovery_dt DATE
+);
+
+CREATE TABLE role (
+id BIGINT PRIMARY KEY generated always as identity,
+name VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS role_person
+(
+    person_data_id BIGINT NOT NULL,
+    role_id BIGINT NOT NULL,
+    PRIMARY KEY (person_data_id, role_id),
+    FOREIGN KEY (person_data_id) REFERENCES person_data(id) ON DELETE CASCADE,
+    FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE CASCADE
 );

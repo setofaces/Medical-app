@@ -2,7 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="liga.medical.repository.PersonDataRepository">
 
-    <resultMap id="PersonData" type="liga.medical.model.PersonData" autoMapping="true">
+    <resultMap id="personData" type="liga.medical.model.PersonData" autoMapping="true">
         <id property="id" column="id" jdbcType="BIGINT"/>
+        <collection property="roles" ofType="liga.medical.model.Role">
+            <id property="id" column="role_id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+        </collection>
     </resultMap>
+
+    <select id="findByEmail" resultMap="personData">
+        SELECT pd.*, r.id,r.name
+        FROM person_data AS pd
+        INNER JOIN role_person AS rp ON pd.id = rp.person_data_id
+        INNER JOIN role AS r ON r.id = rp.role_id
+        WHERE pd.email=#{email};
+    </select>
+
+    <insert id="add" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO person_data (last_name, first_name, birth_dt, age, sex, contact_id, medical_card_id, parent_id, email, password)
+        VALUES (#{lastName}, #{firstName}, #{birthDt}, #{age}, #{sex}, #{contactId}, #{medicalCardId}, #{parentId}, #{email}, #{password});
+    </insert>
+
+    <insert id="addRoles">
+        INSERT INTO role_person (person_data_id, role_id) VALUES
+        <foreach collection="roles" item="item" separator=",">
+            (#{personDataId}, #{item.id,jdbcType=BIGINT})
+        </foreach>
+    </insert>
 </mapper>
