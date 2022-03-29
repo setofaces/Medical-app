@@ -1,6 +1,7 @@
 package liga.medical.controller;
 
 import liga.medical.dto.PersonDataDto;
+import liga.medical.logging.Loggable;
 import liga.medical.service.PersonDataService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Loggable
 @RequestMapping("/person_data")
 @RestController
 public class PersonDataController {

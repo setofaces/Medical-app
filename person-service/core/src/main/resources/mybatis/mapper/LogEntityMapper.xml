@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="liga.medical.repository.LogRepository">
+
+    <resultMap id="logEntity" type="liga.medical.model.LogEntity" autoMapping="true">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <insert id="add" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+        INSERT INTO log_entity (event_date, method_name, class_name, user_name) VALUES
+        (#{eventDate}, #{methodName}, #{className}, #{userName});
+    </insert>
+
+</mapper>

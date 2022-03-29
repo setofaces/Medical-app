@@ -2,6 +2,7 @@ package liga.medical.controller;
 
 import liga.medical.dto.MedicalCardDto;
 
+import liga.medical.logging.Loggable;
 import liga.medical.service.MedicalCardService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Loggable
 @RequestMapping("/medical_card")
 @RestController
 public class MedicalCardController {
